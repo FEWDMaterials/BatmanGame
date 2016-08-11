@@ -171,7 +171,7 @@ const Game = (function() {
                 }
            }
 
-           if ( downArrowPressed ) {
+           if ( downArrowPressed && !this.isJumping ) {
                 this.idx = 0;
                 this.allowedSprites = [0];
 
@@ -215,6 +215,7 @@ const Game = (function() {
 
                 this.keys = keyDownHandler( e.which );
 
+                e.preventDefault();
             });
 
             window.addEventListener('keyup', ( e ) => {
@@ -224,6 +225,7 @@ const Game = (function() {
 
                 this.keys = keyUpHandler( e.which );
 
+                e.preventDefault();
             });
         }
     } // Main
