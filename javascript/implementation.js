@@ -1,7 +1,24 @@
+/*
+    @function moveBgLeft
+    @param {number} x
+    @returns {number}
+    @desc return the input param minus 10 (or some other value that you like)
+*/
 function moveBgLeft( x ) {
     return x - 10;
 }
 
+/*
+    @function keyUpHandler
+    @param {number} keyCode
+    @param {boolean} upArrowPressed
+    @param {boolean} rightArrowPressed
+    @param {boolean} downArrowPressed
+    @param {boolean} leftArrowPressed
+    @param {boolean} shiftKeyPressed 
+    @returns { object }
+    @desc returns all the above params but flips a switch setting val to true 
+*/
 function keyUpHandler(
     keyCode = 0,
     upArrowPressed = false,
@@ -39,6 +56,17 @@ function keyUpHandler(
     };
 }
 
+/*
+    @function keyDownHandler
+    @param {number} keyCode
+    @param {boolean} upArrowPressed
+    @param {boolean} rightArrowPressed
+    @param {boolean} downArrowPressed
+    @param {boolean} leftArrowPressed
+    @param {boolean} shiftKeyPressed 
+    @returns { object }
+    @desc returns all the above params but flips a switch setting val to true 
+*/
 function keyDownHandler(
     keyCode = 0,
     upArrowPressed = false,
@@ -76,6 +104,12 @@ function keyDownHandler(
     };
 }
 
+/*
+    @function shouldJumpNow
+    @param {number} y
+    @returns {number}
+    @desc subtracts a value from y to simulate jump
+*/
 function shouldJumpNow( y ) {
     return y - 80;
 }

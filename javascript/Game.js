@@ -182,12 +182,13 @@ const Game = (function() {
                 this.data.background.x = moveBgLeft( this.data.background.x );
            }
 
-           if ( upArrowPressed && !this.isJumping ) {
+           if ( upArrowPressed && !this.isJumping && this.data.background.startMoving) {
                 this.cachedY = this.y;
 
                 this.y = typeof shouldJumpNow !== "undefined" && shouldJumpNow( this.y ) || this.y;
 
                 if ( this.cachedY !== this.y ) {
+
                     this.isJumping = true;
                     this.idx = 0;
                     this.allowedSprites = [4];
